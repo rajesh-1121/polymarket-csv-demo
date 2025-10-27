@@ -1,0 +1,10 @@
+streamlit
+sqlalchemy>=2
+psycopg[binary]>=3
+pandas
+python-dotenv
+httpx
+matplotlib
+streamlit==1.38.0
+pandas>=2.0.0
+matplotlib>=3.7
