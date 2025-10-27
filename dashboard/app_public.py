@@ -1,4 +1,3 @@
-# dashboard/app_public.py
 import pandas as pd
 import streamlit as st
 from pathlib import Path
@@ -31,7 +30,6 @@ This public demo reads **CSV files committed to the repo**:
 
 > The full scraper & database run privately; we only publish CSV artifacts here.
 """)
-    # Quick stats
     cols = st.columns(3)
     cols[0].metric("Features rows", 0 if feat is None else len(feat))
     cols[1].metric("Bets rows", 0 if bets is None else len(bets))
@@ -42,7 +40,6 @@ with tab2:
     if feat is None or feat.empty:
         st.warning("features_pre_res.csv not found or empty in the repo.")
     else:
-        # light filters
         kc1, kc2 = st.columns([2,1])
         q = kc1.text_input("Search question contains", "")
         n = kc2.slider("Show top N rows", 50, 5000, min(500, len(feat)))
@@ -62,7 +59,6 @@ with tab3:
     if bets is None or bets.empty:
         st.warning("bets_level_data.csv not found or empty in the repo.")
     else:
-        # filters
         c1, c2, c3 = st.columns([2,1,1])
         q = c1.text_input("Search question contains", "")
         mkt = c2.text_input("Market id equals", "")
